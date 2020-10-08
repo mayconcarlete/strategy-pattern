@@ -1,14 +1,15 @@
-import { IPayament } from "../payament-interface/payament-interface";
+import { IPayament, TPayamentData } from "../payament-interface/payament-interface";
 
 export class CheckoutCart{
     private readonly payamentMethod:IPayament
-    private readonly price:number
-    constructor(payamentMethod:IPayament, price:number){
+    private readonly payamentData:TPayamentData
+
+    constructor(payamentMethod:IPayament, payamentData:TPayamentData){
         this.payamentMethod = payamentMethod
-        this.price = price
+        this.payamentData = payamentData
     }
 
     payCart():void{
-        this.payamentMethod.pay(this.price)
+        this.payamentMethod.pay(this.payamentData)
     }
 }

@@ -1,7 +1,7 @@
-import { IPayament } from "../payament-interface/payament-interface";
+import { IPayament, TPayamentData } from "../payament-interface/payament-interface";
 
 export class VisaPayament implements IPayament{
-    pay(price:number):void {
-        console.log(`You are paying ${price} with Visa`)
+    pay(payamentData:TPayamentData):void{
+        console.log(`You are paying ${payamentData.price} with Visa`)
     }
 }
